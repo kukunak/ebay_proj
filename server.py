@@ -1,11 +1,11 @@
 from flask import Flask
-import ebay 
+import ebay
 
-app = Flask(__name__) # создаем приложение в () имя текущего файла
+app = Flask(__name__) 
 
 @app.route('/')
 def index():
-    return f'{cat:\n} {title:\n}{price:\n} {url:\n}'
+    return items
 
 if __name__ == '__main__':
     app.run()

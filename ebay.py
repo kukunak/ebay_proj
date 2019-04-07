@@ -1,11 +1,11 @@
-
 from ebaysdk.finding import Connection as finding
 from bs4 import BeautifulSoup
 from flask import current_app
+from config import EBAY_API_KEY
 
 
 Keywords = input('введите интересующий товар\n')
-api = finding(appid=current_app.config['EBAY_API_KEY'], config_file=None)
+api = finding(appid=EBAY_API_KEY, config_file=None)
 api_request = { 'keywords': Keywords }
 response = api.execute('findItemsByKeywords', api_request)
 soup = BeautifulSoup(response.content,'lxml')
