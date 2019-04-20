@@ -12,6 +12,7 @@ soup = BeautifulSoup(response.content,'lxml')
 
 totalentries = int(soup.find('totalentries').text)
 items = soup.find_all('item')
+print (totalentries)
 
 for item in items:
     cat = item.categoryname.string.lower()
